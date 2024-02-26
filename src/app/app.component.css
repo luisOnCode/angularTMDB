@@ -1,0 +1,71 @@
+nav {
+    background-color: rgb(29, 29, 53);
+    display: flex;
+    justify-content: space-between;
+    padding: 4.2vh;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #f7d354;
+    transition: 0.5s;
+}
+
+a:hover {
+    color: #b8930c;
+}
+
+nav form {
+    margin: .3vh;
+}
+
+nav form input {
+    border: 2px solid rgb(155, 155, 155);
+    border-radius: .7vh;
+    height: 4vh;
+    width: 26vh;
+    padding: .5vh;
+    background-color: rgb(29, 29, 53);
+    font-weight: bold;
+    font-size: 1.7vh;
+    margin: .5vh;
+}
+
+nav form input::placeholder {
+    color: rgb(155, 155, 155);
+}
+
+nav form input:focus {
+    outline: none;
+    background-color: rgb(204, 204, 204);
+    color: rgb(29, 29, 53);
+    border: 2px solid rgb(204, 204, 204);
+}
+
+h2 a {
+    font-size: 4vh;
+}
+
+nav form button {
+    margin: .5vh;
+    border-radius: .7vh;
+    border: 2px solid #f7d354;
+    color: #f7d354;
+    background-color: rgb(29, 29, 53);
+    
+    height: 4vh;
+    width: 8vh;
+    font-weight: bold;
+    font-size: 1.7vh;
+    cursor: pointer;
+    transition: .2s;
+}
+
+nav form button:hover {
+    background-color: #fac815;
+    border: 2px solid #fac815;
+    color: rgb(29, 29, 53);
+}
