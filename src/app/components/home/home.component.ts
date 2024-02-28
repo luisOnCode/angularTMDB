@@ -22,8 +22,4 @@ export class HomeComponent implements OnInit{
       this.data = response
     })
   }
-
-  teste(param1: string){
-    console.log(param1)
-  }
 }

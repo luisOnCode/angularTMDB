@@ -1,10 +1,8 @@
 <h1>Most Valued Movies</h1>
 <section class="movieNav" *ngIf="data">
-    <section class="teste2" *ngFor="let movie of data.results">
+    <section class="movieCard" *ngFor="let movie of data.results">
         <img src="{{ imageUrl + movie.poster_path }}" alt="{{ movie.title }}">
         <h1>{{ movie.title }}</h1>
         <a href="movie/{{ movie.id }}"><button>Details</button></a>
-        <!-- <section>{{ movie.vote_average.toFixed(1) }}</section>
-        <a href="movie/{{ movie.id }}">Detalhes</a> -->
     </section>
 </section>

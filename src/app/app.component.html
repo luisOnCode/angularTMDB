@@ -2,13 +2,10 @@
   <h2>
     <a routerLink="">AngularTMDB</a>
   </h2>
-  <!-- <div>
-    <input type="text" placeholder="Search for a movie" (keyup.enter)="enterPress($event)">
-    <button type="submit" (click)="enterPress($event)">Search</button>
-  </div> -->
   <div>
     <input type="text" placeholder="Search for a movie" [(ngModel)]="valorInput" (keyup.enter)="getSearchValue()">
     <button type="submit" (click)="getSearchValue()">Search</button>
+    <button type="submit" (click)="performAction()">teste</button>
   </div>
 </nav>
 <router-outlet />
