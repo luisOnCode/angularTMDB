@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'meu_angular01';
+
+  searchValue: string = '';
+
+  valorInput: string = '';
+
+  getSearchValue() {
+    this.searchValue = this.valorInput
+    this.valorInput = ""
+    console.log(this.searchValue)
+  }
 }

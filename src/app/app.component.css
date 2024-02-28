@@ -18,11 +18,11 @@ a:hover {
     color: #b8930c;
 }
 
-nav form {
+nav div {
     margin: .3vh;
 }
 
-nav form input {
+nav div input {
     border: 2px solid rgb(155, 155, 155);
     border-radius: .7vh;
     height: 4vh;
@@ -34,11 +34,11 @@ nav form input {
     margin: .5vh;
 }
 
-nav form input::placeholder {
+nav div input::placeholder {
     color: rgb(155, 155, 155);
 }
 
-nav form input:focus {
+nav div input:focus {
     outline: none;
     background-color: rgb(204, 204, 204);
     color: rgb(29, 29, 53);
@@ -49,7 +49,7 @@ h2 a {
     font-size: 4vh;
 }
 
-nav form button {
+nav div button {
     margin: .5vh;
     border-radius: .7vh;
     border: 2px solid #f7d354;
@@ -64,7 +64,7 @@ nav form button {
     transition: .2s;
 }
 
-nav form button:hover {
+nav div button:hover {
     background-color: #fac815;
     border: 2px solid #fac815;
     color: rgb(29, 29, 53);
