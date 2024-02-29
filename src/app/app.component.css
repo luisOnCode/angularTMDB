@@ -2,9 +2,13 @@ nav {
     background-color: rgb(29, 29, 53);
     display: flex;
     justify-content: space-between;
-    padding: 4.2vh;
+    align-items: center;
+    padding-right: 4.2vh;
+    padding-left: 4.2vh;
     position: fixed;
     width: 100vw;
+    height: 15vh;
+    z-index: 2;
     top: 0;
 }
 
@@ -18,9 +22,9 @@ a:hover {
     color: #b8930c;
 }
 
-nav div {
+/* nav div {
     margin: .3vh;
-}
+} */
 
 nav div input {
     border: 2px solid rgb(155, 155, 155);
@@ -31,7 +35,7 @@ nav div input {
     background-color: rgb(29, 29, 53);
     font-weight: bold;
     font-size: 1.7vh;
-    margin: .5vh;
+    margin-right: .5vh;
 }
 
 nav div input::placeholder {
@@ -50,7 +54,7 @@ h2 a {
 }
 
 nav div button {
-    margin: .5vh;
+    margin-left: .5vh;
     border-radius: .7vh;
     border: 2px solid #f7d354;
     color: #f7d354;

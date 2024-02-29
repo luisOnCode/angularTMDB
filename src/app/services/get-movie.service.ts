@@ -11,11 +11,15 @@ export class GetMovieService {
 
   imageUrl: string = API_IMG;
 
-  topRated(): Observable<any>{
+  topRated(): Observable<any> {
     return this.httpClient.get<any>(`${API_PATH}top_rated?${API_KEY}`)
   }
 
-  searchList(search: any): Observable<any>{
+  searchList(search: any): Observable<any> {
     return this.httpClient.get<any>(`https://api.themoviedb.org/3/search/movie?query=${search}&${API_KEY}`)
+  }
+
+  movieDetails(id: any): Observable<any> {
+    return this.httpClient.get<any>(`${API_PATH + id}?${API_KEY}`)
   }
 }

@@ -1,5 +1,5 @@
 <h1 *ngIf="data && data.results.length == 0">Sorry, we couldn't find any title for: "{{title}}"</h1>
-<h1 *ngIf="data">These are the movies we found for: "{{title}}"</h1>
+<h1 *ngIf="data && data.results.length > 0">These are the movies we found for: "{{title}}"</h1>
 <section class="movieNav" *ngIf="data">
     <section class="movieCard" *ngFor="let movie of data.results">
         <img src="{{ imageUrl + movie.poster_path }}" alt="{{ movie.title }}">

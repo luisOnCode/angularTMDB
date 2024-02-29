@@ -10,7 +10,7 @@ import { EstablishComunicationService } from '../../services/establish-comunicat
   templateUrl: './search.component.html',
   styleUrl: './search.component.css'
 })
-export class SearchComponent implements OnInit, OnChanges {
+export class SearchComponent implements OnInit, OnDestroy {
 
   data: any = false;
   title: any = false;
@@ -21,7 +21,7 @@ export class SearchComponent implements OnInit, OnChanges {
 
   parametroDaUrl: any;
 
-  constructor(private route: ActivatedRoute, private getMovieService: GetMovieService, private establishComunication: EstablishComunicationService) {
+  constructor(private route: ActivatedRoute, private establishComunication: EstablishComunicationService) {
     this.subscription = this.establishComunication.establish.subscribe(() => {
       setTimeout(() => {
         if (JSON.stringify(this.data) !== JSON.stringify(this.establishComunication.data)) {
@@ -37,14 +37,11 @@ export class SearchComponent implements OnInit, OnChanges {
     this.route.queryParams.subscribe(
       (q: any) => { this.parametroDaUrl = q["q"] }
     )
+    console.log(this.parametroDaUrl)
     setTimeout(() => {
       this.data = this.establishComunication.data
       this.title = this.parametroDaUrl
     }, 300)
-  }
-
-  ngOnChanges() {
-    console.log('teste')
   }
 
   ngOnDestroy() {

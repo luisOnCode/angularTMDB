@@ -1,1 +1,78 @@
-<p>movie works!</p>
+<section id="main-section" *ngIf="data">
+    <img id="background" [src]="imgUrl + data.backdrop_path" [alt]="data.title">
+    <section id="content-section">
+        <div id="imageDiv">
+            <img [src]="imgUrl + data.poster_path" alt="">
+        </div>
+        <div id="infoDiv">
+            <h1>{{ data.title }}</h1>
+            <h2>{{ data.tagline }}</h2>
+            <p>" {{ data.overview }} "</p>
+            <div>
+                <section class="infoDivSection">
+                    <span class="icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                    <span class="content" *ngIf="data.genres.length == 1">
+                        <span>{{ data.genres[0].name }}</span>
+                    </span>
+                    <span class="content" *ngIf="data.genres.length > 1 && data.genres.length <= 4">
+                        <span *ngFor="let companie of data.genres">{{ companie.name }}</span>
+                    </span>
+                    <span class="content content-mini" *ngIf="data.genres.length >= 5">
+                        <span>{{ data.genres[1].name }}</span>
+                        <span>{{ data.genres[2].name }}</span>
+                        <span>{{ data.genres[3].name }}</span>
+                        <span>{{ data.genres[4].name }}</span>
+                        <span>{{ data.genres[5].name }}</span>
+                    </span>
+                </section>
+                <section class="infoDivSection">
+                    <span class="icon">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </span>
+                    <span class="content">
+                        <span>
+                            {{data.release_date.slice(5, 7) }}.{{ data.release_date.slice(8) }}.{{ data.release_date.slice(0, 4) }}
+                        </span>
+                    </span>
+                </section>
+                <section class="infoDivSection">
+                    <span class="icon">
+                        <i class="fa-solid fa-video"></i>
+                    </span>
+                    <span class="content" *ngIf="data.production_companies.length == 1">
+                        <span>{{ data.production_companies[0].name }}</span>
+                    </span>
+                    <span class="content" *ngIf="data.production_companies.length > 1 && data.production_companies.length <= 4">
+                        <span *ngFor="let companie of data.production_companies">{{ companie.name }}</span>
+                    </span>
+                    <span class="content content-mini" *ngIf="data.production_companies.length >= 5">
+                        <span>{{ data.production_companies[1].name }}</span>
+                        <span>{{ data.production_companies[2].name }}</span>
+                        <span>{{ data.production_companies[3].name }}</span>
+                        <span>{{ data.production_companies[4].name }}</span>
+                        <span>{{ data.production_companies[5].name }}</span>
+                    </span>
+                </section>
+                <section class="infoDivSection">
+                    <span class="icon">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                    <span class="content">
+                        <span>{{ data.vote_count }}</span>
+                    </span>
+                </section>
+                <section class="infoDivSection">
+                    <span class="icon">
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                    <span class="content">
+                        <span>{{ data.vote_average.toFixed(1) }} / 10</span>
+                    </span>
+                </section>
+            </div>
+        </div>
+    </section>
+
+</section>
