@@ -4,6 +4,21 @@ h1{
     margin: 2.2vh;
 }
 
+.fa-arrow-left {
+    left: 0;
+    position: fixed;
+    padding: 5vh;
+    font-size: 7vh;
+    cursor: pointer;
+    z-index: 1;
+    color: #f7d354;
+    transition: 0.5s;
+}
+
+.fa-arrow-left:hover {
+    color: #b8930c;
+}
+
 .movieNav {
     display: flex;
     flex-wrap: wrap;

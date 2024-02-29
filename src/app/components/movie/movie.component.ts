@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { API_KEY, API_PATH } from '../../../environments/environments';
 import { GetMovieService } from '../../services/get-movie.service';
 import { API_IMG } from '../../../environments/environments.prod';
@@ -17,7 +17,7 @@ export class MovieComponent implements OnInit {
   apiKey: string = API_KEY;
   imgUrl: string = API_IMG;
 
-  constructor(private route: ActivatedRoute, private getMovieService: GetMovieService) {
+  constructor(private route: ActivatedRoute, private router: Router, private getMovieService: GetMovieService) {
 
   }
 
@@ -33,5 +33,4 @@ export class MovieComponent implements OnInit {
       console.log(this.data)
     }, 400)
   }
-
 }

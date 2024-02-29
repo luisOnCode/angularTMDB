@@ -1,6 +1,6 @@
-import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit, HostListener } from '@angular/core';
 import { API_IMG } from '../../../environments/environments.prod';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GetMovieService } from '../../services/get-movie.service';
 import { Subscription } from 'rxjs';
 import { EstablishComunicationService } from '../../services/establish-comunication.service';
@@ -21,7 +21,7 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   parametroDaUrl: any;
 
-  constructor(private route: ActivatedRoute, private establishComunication: EstablishComunicationService) {
+  constructor(private route: ActivatedRoute, private router: Router, private establishComunication: EstablishComunicationService) {
     this.subscription = this.establishComunication.establish.subscribe(() => {
       setTimeout(() => {
         if (JSON.stringify(this.data) !== JSON.stringify(this.establishComunication.data)) {
