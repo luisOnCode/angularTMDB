@@ -21,7 +21,7 @@ app-root{
     display: fixed;
 }
 
-app-home {
+app-home, app-search {
     width: 100vw;
     display: flex;
     align-items: center;

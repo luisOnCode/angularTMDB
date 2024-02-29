@@ -3,9 +3,8 @@
     <a routerLink="">AngularTMDB</a>
   </h2>
   <div>
-    <input type="text" placeholder="Search for a movie" [(ngModel)]="valorInput" (keyup.enter)="getSearchValue()">
-    <button type="submit" (click)="getSearchValue()">Search</button>
-    <button type="submit" (click)="performAction()">teste</button>
+    <input type="text" placeholder="Search for a movie" [(ngModel)]="valorInput" (keyup.enter)="getSearchValue(); performAction()">
+    <button type="submit" (click)="getSearchValue(); performAction()">Search</button>
   </div>
 </nav>
 <router-outlet />

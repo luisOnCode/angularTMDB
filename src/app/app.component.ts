@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { GetMovieService } from './services/get-movie.service';
-import { SearchComponent } from './components/search/search.component';
+import { EstablishComunicationService } from './services/establish-comunication.service';
 
 
 @Component({
@@ -16,26 +16,34 @@ export class AppComponent {
   searchValue: string = '';
   valorInput: string = '';
 
-  constructor(private router: Router, private getMovieService: GetMovieService){}
+  constructor(private router: Router, private getMovieService: GetMovieService, private establishComunication: EstablishComunicationService) { }
 
   getSearchValue() {
     this.searchValue = this.valorInput
     this.valorInput = ""
-    
-    if(this.searchValue !== ""){
+
+    if (this.searchValue !== "") {
       this.router.navigateByUrl(`search?q=${this.searchValue}`)
 
-    this.getMovieService.searchList(this.searchValue).subscribe((response) => {
-      this.data = response
-    })
+      setTimeout(() => {
+        this.getMovieService.searchList(this.searchValue).subscribe((response) => {
+          this.data = response;
+          this.establishComunication.data = response;
+        })
+      }, 300)
+      
     }
   }
 
   ngOnInit(): void {
-    this.router.navigate(['/']);
+    // this.router.navigate(['/']);
   }
 
-  performAction(){
-    this.getMovieService.sendAction();
+  performAction() {
+    setTimeout(() => {
+      this.router.navigateByUrl(`search?q=${this.searchValue}`)
+      this.establishComunication.sendAction();
+    }, 300)
+
   }
 }

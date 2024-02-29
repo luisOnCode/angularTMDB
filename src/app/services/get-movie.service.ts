@@ -18,11 +18,4 @@ export class GetMovieService {
   searchList(search: any): Observable<any>{
     return this.httpClient.get<any>(`https://api.themoviedb.org/3/search/movie?query=${search}&${API_KEY}`)
   }
-
-  private actionSource = new Subject<void>();
-  action$ = this.actionSource.asObservable();
-
-  sendAction() {
-    this.actionSource.next();
-  }
 }
