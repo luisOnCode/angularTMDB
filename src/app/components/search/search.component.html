@@ -3,8 +3,8 @@
 <h1 *ngIf="data && data.results.length > 0">These are the movies we found for: "{{title}}"</h1>
 <section class="movieNav" *ngIf="data">
     <section class="movieCard" *ngFor="let movie of data.results">
-        <img src="{{ imageUrl + movie.poster_path }}" alt="{{ movie.title }}">
+        <img [src]="imageUrl + movie.poster_path" [alt]="movie.title">
         <h1>{{ movie.title }}</h1>
-        <a #home href="movie/{{ movie.id }}"><button>Details</button></a>
+        <a routerLink="/movie/{{ movie.id }}"><button>Details</button></a>
     </section>
 </section>

@@ -37,11 +37,11 @@ export class SearchComponent implements OnInit, OnDestroy {
     this.route.queryParams.subscribe(
       (q: any) => { this.parametroDaUrl = q["q"] }
     )
-    console.log(this.parametroDaUrl)
     setTimeout(() => {
       this.data = this.establishComunication.data
       this.title = this.parametroDaUrl
     }, 300)
+
   }
 
   ngOnDestroy() {

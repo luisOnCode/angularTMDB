@@ -36,7 +36,7 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    // this.router.navigate(['/']);
+    this.router.navigate(['/']);
   }
 
   performAction() {
