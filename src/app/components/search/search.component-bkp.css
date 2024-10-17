@@ -1,0 +1,74 @@
+h1{
+    color: rgb(156, 156, 211);
+    font-size: 4.2vh;
+    margin: 2.2vh;
+}
+
+.fa-arrow-left {
+    left: 0;
+    position: fixed;
+    padding: 5vh;
+    font-size: 7vh;
+    cursor: pointer;
+    z-index: 1;
+    color: #f7d354;
+    transition: 0.5s;
+}
+
+.fa-arrow-left:hover {
+    color: #b8930c;
+}
+
+.movieNav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.movieCard {
+    height: 60vh;
+    width: 35vh;
+    margin: 1vh;
+    padding: 1vh;
+    background-color: rgb(52, 52, 83);
+    border-radius: 1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.movieCard img {
+    height: 80%;
+    border-radius: 0.7vh;
+    margin: .25vh;
+    margin-top: .5vw;
+}
+
+.movieCard h1 {
+    width: 80%;
+    text-align: center;
+    margin: .25vh;
+    font-size: 1.8vh;
+    color: rgb(156, 156, 211);
+}
+
+.movieCard a button {
+    background-color: #b8930c00;
+    border: 2px solid #b8930c;
+    border-radius: .5vh;
+    color: #b8930c;
+    font-weight: bold;
+    font-size: 1.6vh;
+    padding: .85vh;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.movieCard a button:hover {
+    border: 2px solid #f7d354;;
+    background-color: #f7d354;
+    color: rgb(22, 22, 48);
+}

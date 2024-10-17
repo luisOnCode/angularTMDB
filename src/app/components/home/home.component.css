@@ -13,8 +13,8 @@ h1{
 }
 
 .movieCard {
-    height: 60vh;
-    width: 35vh;
+    height: 69vh;
+    width: 37vh;
     margin: 1vh;
     padding: 1vh;
     background-color: rgb(52, 52, 83);
@@ -22,38 +22,75 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .movieCard img {
     height: 80%;
+    width: 100%;
     border-radius: 0.7vh;
     margin: .25vh;
-    margin-top: .5vw;
+    margin-top: .2vw;
 }
 
 .movieCard h1 {
     width: 80%;
     text-align: center;
     margin: .25vh;
-    font-size: 1.8vh;
+    font-size: clamp(1vh, 2.8vh, 21.13px);
     color: rgb(156, 156, 211);
+    margin-top: auto;
+    margin-bottom: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    overflow-x: auto;
+    padding: 1vh;
+}
+
+.movieCard a {
+    width: 60%;
 }
 
 .movieCard a button {
     background-color: #b8930c00;
-    border: 2px solid #b8930c;
+    border: 0.2vh solid #b8930c;
     border-radius: .5vh;
     color: #b8930c;
     font-weight: bold;
-    font-size: 1.6vh;
+    font-size: clamp(1vh, 2.2vh, 15.62px);
     padding: .85vh;
     cursor: pointer;
     transition: 0.2s;
+    width: 100%;
 }
 
 .movieCard a button:hover {
-    border: 2px solid #f7d354;;
+    border: 0.2vh solid #f7d354;;
     background-color: #f7d354;
     color: rgb(22, 22, 48);
+}
+
+
+.movieCard h1::-webkit-scrollbar {
+    width: 0; /* removendo a largura do trilho */
+    height: 0.9vh;
+}
+  
+.movieCard h1::-webkit-scrollbar-thumb {
+    background-color: rgb(156, 156, 211); /* cor da thumb da barra de rolagem */
+    border-radius: 10px; /* borda arredondada da thumb */
+    height: 1px;
+    width: 1px;
+}
+
+.movieCard h1::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+    background-color: rgb(47, 47, 73);
+}
+
+
+@media (max-aspect-ratio: 1/1), (orientation: portrait) {
+    
+    
+
 }

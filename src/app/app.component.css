@@ -13,9 +13,11 @@ nav {
 }
 
 a {
+    display: block;
     text-decoration: none;
     color: #f7d354;
     transition: 0.5s;
+    font-size: clamp(30px, 6vh, 40px);
 }
 
 a:hover {
@@ -29,12 +31,14 @@ a:hover {
 nav div input {
     border: 2px solid rgb(155, 155, 155);
     border-radius: .7vh;
-    height: 4vh;
-    width: 26vh;
+    height: 8vh;
+    max-height: 45px;
+    width: 33vh;
+    max-width: 250px;
     padding: .5vh;
     background-color: rgb(29, 29, 53);
     font-weight: bold;
-    font-size: 1.7vh;
+    font-size: clamp(12px, 2.7vh, 20px);
     margin-right: .5vh;
 }
 
@@ -49,10 +53,6 @@ nav div input:focus {
     border: 2px solid rgb(204, 204, 204);
 }
 
-h2 a {
-    font-size: 4vh;
-}
-
 nav div button {
     margin-left: .5vh;
     border-radius: .7vh;
@@ -60,10 +60,12 @@ nav div button {
     color: #f7d354;
     background-color: rgb(29, 29, 53);
     
-    height: 4vh;
-    width: 8vh;
+    height: 8vh;
+    max-height: 45px;
+    width: 13vh;
+    max-width: 92px;
     font-weight: bold;
-    font-size: 1.7vh;
+    font-size: clamp(12px, 2.7vh, 20px);
     cursor: pointer;
     transition: .2s;
 }
@@ -72,4 +74,31 @@ nav div button:hover {
     background-color: #fac815;
     border: 2px solid #fac815;
     color: rgb(29, 29, 53);
+}
+
+@media (min-width: 1920) {
+
+    nav div input, nav div button {
+        max-width: auto;
+        max-height: auto;
+    }
+
+}
+
+@media (min-height: 920) {
+
+    nav div input, nav div button {
+        max-width: auto;
+        max-height: auto;
+    }
+
+}
+
+@media (max-aspect-ratio: 1/1), (orientation: portrait) {
+    
+    nav {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
 }
